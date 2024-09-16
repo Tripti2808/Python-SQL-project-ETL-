@@ -24,7 +24,7 @@ select *
 ,row_number() over (partition by region order by sales desc) as rn
 from cte) A
 where rn<=5
-;
+
 
 
 -- find month over month growth comparison  for 2022 and 2023 sales
@@ -41,7 +41,7 @@ select order_month
 from cte
 group by order_month
 order by order_month
-;
+
 
 
 -- for each category which month has highest sales
@@ -56,7 +56,7 @@ select *
 ,row_number() over(partition by category order by sales desc) as rn
 from cte) a
 where rn=1
-;
+
 
 -- which sub category had highest growth by profit in 2023 compare to 2022
 with cte as(
